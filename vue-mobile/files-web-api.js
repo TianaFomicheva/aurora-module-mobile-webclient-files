@@ -73,7 +73,7 @@ export default {
       defaultErrorText: i18n.global.t('FILESWEBCLIENT.ERROR_INVALID_FOLDER_NAME'),
     })
       .then(result => result)
-      //Ошибки надо читать, а не подставлять дефолтную, и не списывать на ошибки сервера!!!!!
+      //Ошибки надо читать, а не подставлять дефолтную, и не списывать на ошибки сервера!!!!!!!
       .catch(error => console.log(error))
   },
 

@@ -76,6 +76,7 @@ export default {
     // commit('changeCurrentPath', { index, path, lastStorage })
     commit('setCurrentPath', { path: path || [] })
   },
+
   asyncRenameItem: async ({ state }, { file, itemName }) => {
     const parameters = {
       Type: state.currentStorage.Type,
@@ -152,7 +153,7 @@ export default {
     const currentStorage = getters['currentStorage']
     const parameters = {
       Type: currentStorage.Type,
-      Path: '/' + getters['currentPath'].join('/'),
+      Path: '/' + getters['currentPath'].join('/'), // Антипаттерн!!!
       FolderName: name,
     }
     return await filesWebApi.createFolder(parameters)
